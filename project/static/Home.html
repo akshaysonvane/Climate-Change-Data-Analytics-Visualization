@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <style>
+        #temp {
+        float: right;
+      }
+    </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   
+    <link href= '../static/css/sb-admin.css' rel="stylesheet" type="text/css">
+    <link href= "../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  </head>
+  <script type="text/javascript" src="http://code.angularjs.org/1.1.0/angular.min.js"></script>
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+
+  </script>
+  <body> 
+   <!-- <div id="wrapper">     
+        <div id="page-wrapper">-->
+            <div  ng-controller="RegressionDataController"  style="font-size: 19px; background-color: #00001a; height: 800px;">
+                <br>
+                <br>
+                <!-- /.row -->
+                <div id="temp" ng-init="getListofCountryCity()">
+                  <div id="Regression" style="width: 900px; height: 500px;"></div>
+                </div>
+
+                <div style="padding-left: 25px">
+                <p><font color="#ffff80">Temperature Change rate: {{Coefficient}}</font></p>
+                <form ng-submit="getCityAvgTempData()">
+                 <font color="#ffff80"> Enter Details:</font><br>    
+                  <br>           
+                  <font color="#ffff80" style="width:200px">Country:</font><select style="margin-left: 49px;" ng-model="Country" ng-options="x for x in ListOfCountry"></select><br>             
+                  <font color="#ffff80" style="width:80px">City:</font><select style="margin-left: 82px;" ng-model="City" ng-options="x for x in ListOfCity"></select><br>
+                  <font color="#ffff80" style="width:80px">Month:</font><select style="margin-left: 62px;" ng-model="Month" ng-options="x for (x, y) in MonthList"></select><br>
+                  <font color="#ffff80" style="width:80px">No. of Years:&nbsp;&nbsp;</font><input type="text" ng-model="NumberOfYears" name="NumberOfYears" placeholder="100"/><br>    
+                  <br>
+
+                  <input class="btn btn-success"  type="submit" id="submit" value="Submit" style="height:35px;width:100px;"/>
+              </form>
+              
+              </div>
+              <br>
+              <br>
+
+           
+              <div style="padding-left: 25px">
+                <p><font color="#ffff80">Predicted Temperature: {{PredictedTemp}}</font></p> 
+             
+                <form ng-submit="getPredictedTemp()">           
+                    
+                    <font color="#ffff80">Enter Year:</font><input type="text" ng-model="Year" name="Year" style="margin-left: 26px;"/><br>
+                    <br>
+                    <input class="btn btn-success"  type="submit" id="submit" value="Submit" style="height:35px;width:100px; margin-left: 3px;"/>
+                </form>
+              </div> 
+              <br>
+              <br> 
+              </div>            
+       <!--     </div> -->
+            <!-- /.container-fluid -->
+     <!--   </div> -->
+
+        <script type="text/javascript">//<![CDATA[ 
+            function resize()
+            {
+                var heights = window.innerHeight;
+                document.getElementById("page-wrapper").style.height = heights + "px";
+
+                var width = window.innerWidth;
+                document.getElementById("page-wrapper").style.height = width + "px";
+            }
+            resize();
+            window.onresize = function() {
+                resize();
+            };
+            //]]>  
+
+        </script> 
+        <!-- /#page-wrapper -->
+   <!-- </div> -->
+	<!-- /#page-wrapper -->
+<!--</div>-->
+
+<script type="text/javascript" src={{ url_for('static',filename="js/angular.min.js" ) }}></script>
+<script type="text/javascript" src={{ url_for('static',filename="js/jQuery.js" ) }}></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src={{ url_for('static',filename="js/bootstrap.min.js" ) }}></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-route.min.js"></script>
+
+<script type="text/javascript" src="http://code.angularjs.org/1.1.0/angular.min.js"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi?ext.js"></script>
+    
+  </body>
+
+</html>
