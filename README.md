@@ -14,7 +14,7 @@ Analyzed and visualized earth surface temperature data provided by Berkeley Eart
       5. Gaussian Process
       6. SVR
 2. Clustering
-    - Classified earth surface temerature into 3 clusters of hot, mild and cold.
+    - Classified earth surface temperature into 3 clusters of hot, mild and cold.
     - Generated a google map with showing the clusters for a specific year.
     ![Clustering](/project/GlobalCluster.png?raw=true "Clustering")
     - Model can predict temperature class of any given latitude and longitude for any year and month.
